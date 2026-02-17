@@ -137,38 +137,25 @@ export interface Project {
 export const PROJECTS: Project[] = [
 	{
 		id: 'proj-1',
-		title: 'Rewindly',
-		description: 'AI-powered video highlight generator for content creators',
+		title: 'Cartinary Global',
+		description:
+			'Ecommerce connects buyers and local sellers through a hybrid platform for product discovery, real-time communication, and optimized shopping logistics',
 		longDescription:
-			'A smart video editing platform that uses AI to automatically detect key moments, generate highlight reels, and optimize content for social media platforms.',
-		image: '/projects/rewindly.jpg',
-		technologies: ['Next.js', 'TypeScript', 'Python', 'FFmpeg', 'OpenAI'],
-		liveUrl: 'https://rewindly.app',
-		githubUrl: 'https://github.com',
+			'Cartinary.com is a hybrid logistics and shopping  platform that helps buyers discover local sellers, plan optimized shopping routes, communicate in-app, and adjust plans in real time to save time and effort when buying items. It also allows sellers to list products, set prices, and connect with nearby buyers seamlessly.',
+		image: '/Asset 6@4x (1) 2 (1).png',
+		technologies: ['Next.js', 'TypeScript', 'Node.js', 'MUI', 'Redux'],
+		liveUrl: 'https://cartinary.com/',
 		featured: true,
 	},
 	{
 		id: 'proj-2',
-		title: 'Kingz World',
-		description: 'Immersive gaming community platform with real-time features',
+		title: 'WB Exchange',
+		description: 'crypto exchange platform',
 		longDescription:
-			'A feature-rich community platform for gamers with live chat, tournament brackets, leaderboards, and integrated streaming support.',
-		image: '/projects/kingzworld.jpg',
-		technologies: ['React', 'Node.js', 'Socket.io', 'PostgreSQL', 'Redis'],
-		liveUrl: 'https://kingzworld.com',
-		githubUrl: 'https://github.com',
-		featured: true,
-	},
-	{
-		id: 'proj-3',
-		title: 'CloudSync Dashboard',
-		description: 'Real-time infrastructure monitoring with predictive alerts',
-		longDescription:
-			'A comprehensive cloud infrastructure dashboard featuring real-time metrics, predictive alerting powered by ML models, and automated incident response workflows.',
-		image: '/projects/cloudsync.jpg',
-		technologies: ['Next.js', 'D3.js', 'Python', 'AWS', 'Docker'],
-		liveUrl: 'https://example.com',
-		githubUrl: 'https://github.com',
+			'WBExchange is a crypto exchange platform that buys popular cryptocurrencies like BTC, USDT, and ETH at competitive rates, offers loyalty rewards on trades, and provides a user dashboard to track rewards and activity.',
+		image: '/logo.png',
+		technologies: ['Next.js', 'TypeScript', 'Node.js', 'MUI', 'Redux'],
+		liveUrl: 'https://wBexchange.com',
 		featured: true,
 	},
 ];
@@ -187,30 +174,8 @@ export const SKILLS: SkillCategory[] = [
 			{ name: 'Next.js', icon: 'nextjs' },
 			{ name: 'TypeScript', icon: 'typescript' },
 			{ name: 'Tailwind CSS', icon: 'tailwind' },
+			{ name: 'MUI', icon: 'mui' },
 			{ name: 'Framer Motion', icon: 'framer' },
-			{ name: 'Vue.js', icon: 'vue' },
-		],
-	},
-	{
-		category: 'Backend',
-		skills: [
-			{ name: 'Node.js', icon: 'nodejs' },
-			{ name: 'Python', icon: 'python' },
-			{ name: 'PostgreSQL', icon: 'postgresql' },
-			{ name: 'MongoDB', icon: 'mongodb' },
-			{ name: 'GraphQL', icon: 'graphql' },
-			{ name: 'Redis', icon: 'redis' },
-		],
-	},
-	{
-		category: 'DevOps',
-		skills: [
-			{ name: 'Docker', icon: 'docker' },
-			{ name: 'AWS', icon: 'aws' },
-			{ name: 'CI/CD', icon: 'cicd' },
-			{ name: 'Kubernetes', icon: 'kubernetes' },
-			{ name: 'Terraform', icon: 'terraform' },
-			{ name: 'GitHub Actions', icon: 'github' },
 		],
 	},
 ];
@@ -226,21 +191,15 @@ export interface SocialLink {
 export const SOCIALS: SocialLink[] = [
 	{
 		platform: 'GitHub',
-		url: 'https://github.com',
+		url: 'https://github.com/Dahnee01/',
 		icon: 'Github',
 		brandColor: '#f5f5f5',
 	},
 	{
 		platform: 'LinkedIn',
-		url: 'https://linkedin.com',
+		url: 'https://www.linkedin.com/in/daniel-erhunmwonsere/',
 		icon: 'Linkedin',
 		brandColor: '#0A66C2',
-	},
-	{
-		platform: 'Twitter',
-		url: 'https://twitter.com',
-		icon: 'Twitter',
-		brandColor: '#1DA1F2',
 	},
 	{
 		platform: 'Email',
