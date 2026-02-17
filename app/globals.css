@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+/* ============================================
+   SEMANTIC DESIGN TOKENS
+   :root = dark (default), [data-theme="light"] = light
+   ============================================ */
+
+:root {
+  /* --- Surface / Background --- */
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-hover: rgba(255, 255, 255, 0.06);
+  --surface-elevated: rgba(255, 255, 255, 0.05);
+
+  /* --- Text hierarchy --- */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.60);
+  --text-tertiary: rgba(255, 255, 255, 0.40);
+  --text-muted: rgba(255, 255, 255, 0.30);
+  --text-faint: rgba(255, 255, 255, 0.20);
+
+  /* --- Accent (decorative — buttons, glows, gradients) --- */
+  --accent: #10b981;
+  --accent-secondary: #14b8a6;
+  --accent-tertiary: #0D9488;
+
+  /* --- Accent (text — WCAG AA compliant on background) --- */
+  --accent-text: #34d399;
+  --accent-text-hover: #ffffff;
+
+  /* --- Accent surfaces --- */
+  --accent-surface: rgba(16, 185, 129, 0.10);
+  --accent-border: rgba(16, 185, 129, 0.20);
+
+  /* --- Borders --- */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.20);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  /* --- Glassmorphism --- */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+
+  /* --- Glow/Shadow (emerald-based) --- */
+  --glow-sm: rgba(16, 185, 129, 0.15);
+  --glow-md: rgba(16, 185, 129, 0.30);
+  --glow-lg: rgba(16, 185, 129, 0.50);
+  --glow-border: rgba(16, 185, 129, 0.60);
+
+  /* --- Beams (Hero section) --- */
+  --beam-1: #10B981;
+  --beam-2: #14B8A6;
+  --beam-3: #0D9488;
+  --beam-opacity: 0.6;
+
+  /* --- Scrollbar --- */
+  --scrollbar: rgba(255, 255, 255, 0.1);
+  --scrollbar-hover: rgba(255, 255, 255, 0.2);
+
+  /* --- Selection --- */
+  --selection-bg: rgba(16, 185, 129, 0.3);
+  --selection-text: white;
+
+  /* --- Grid/Cursor (CustomCursor) --- */
+  --grid-color: rgba(16, 185, 129, 0.03);
+  --cursor-glow: rgba(16, 185, 129, 0.15);
+
+  /* --- SVG dot grid (About section) --- */
+  --dot-color: rgba(255, 255, 255, 0.15);
+
+  /* --- Misc --- */
+  --input-bg: rgba(255, 255, 255, 0.03);
+  --tag-bg: rgba(255, 255, 255, 0.05);
+  --tooltip-bg: rgba(0, 0, 0, 0.80);
+
+  /* --- Kept from original --- */
+  --emerald: #10b981;
+  --teal: #14b8a6;
+  --cursor-x: -100px;
+  --cursor-y: -100px;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* --- Surface / Background --- */
+  --background: #f8f9fa;
+  --foreground: #0a0a0a;
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-hover: rgba(255, 255, 255, 0.85);
+  --surface-elevated: rgba(255, 255, 255, 0.9);
+
+  /* --- Text hierarchy --- */
+  --text-primary: #111827;
+  --text-secondary: rgba(0, 0, 0, 0.60);
+  --text-tertiary: rgba(0, 0, 0, 0.45);
+  --text-muted: rgba(0, 0, 0, 0.30);
+  --text-faint: rgba(0, 0, 0, 0.20);
+
+  /* --- Accent (text — darkened for WCAG AA on light) --- */
+  --accent-text: #047857;
+  --accent-text-hover: #065f46;
+
+  /* --- Accent surfaces --- */
+  --accent-surface: rgba(16, 185, 129, 0.08);
+  --accent-border: rgba(16, 185, 129, 0.25);
+
+  /* --- Borders --- */
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.15);
+  --border-subtle: rgba(0, 0, 0, 0.05);
+
+  /* --- Glassmorphism --- */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-shadow: rgba(0, 0, 0, 0.08);
+
+  /* --- Glow/Shadow --- */
+  --glow-sm: rgba(16, 185, 129, 0.10);
+  --glow-md: rgba(16, 185, 129, 0.15);
+  --glow-lg: rgba(16, 185, 129, 0.25);
+  --glow-border: rgba(16, 185, 129, 0.40);
+
+  /* --- Beams --- */
+  --beam-1: #a7f3d0;
+  --beam-2: #99f6e4;
+  --beam-3: #5eead4;
+  --beam-opacity: 0.3;
+
+  /* --- Scrollbar --- */
+  --scrollbar: rgba(0, 0, 0, 0.15);
+  --scrollbar-hover: rgba(0, 0, 0, 0.25);
+
+  /* --- Selection --- */
+  --selection-bg: rgba(16, 185, 129, 0.2);
+  --selection-text: inherit;
+
+  /* --- Grid/Cursor --- */
+  --grid-color: rgba(16, 185, 129, 0.04);
+  --cursor-glow: rgba(16, 185, 129, 0.10);
+
+  /* --- SVG dot grid --- */
+  --dot-color: rgba(0, 0, 0, 0.12);
+
+  /* --- Misc --- */
+  --input-bg: rgba(0, 0, 0, 0.03);
+  --tag-bg: rgba(0, 0, 0, 0.04);
+  --tooltip-bg: rgba(0, 0, 0, 0.75);
+}
+
+/* ============================================
+   TAILWIND THEME WIRING
+   ============================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-text: var(--accent-text);
+  --color-accent-text-hover: var(--accent-text-hover);
+  --color-accent-surface: var(--accent-surface);
+  --color-accent-border: var(--accent-border);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-border-subtle: var(--border-subtle);
+  --color-tag-bg: var(--tag-bg);
+  --color-emerald-glow: var(--glow-border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Hide default cursor on desktop (custom cursor replaces it) */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Marquee animation for tech stack */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulsing ring for location pin / live indicator */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* Text gradient utility */
+.text-gradient {
+  background: linear-gradient(135deg, var(--emerald), var(--teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover);
+}
+
+/* ============================================
+   PROJECT GRADIENT BACKGROUNDS
+   ============================================ */
+
+.project-gradient-0 {
+  background: linear-gradient(to bottom right,
+    rgba(6, 78, 59, 0.4),
+    rgba(19, 78, 74, 0.3),
+    rgba(22, 78, 99, 0.4)
+  );
+}
+
+.project-gradient-1 {
+  background: linear-gradient(to bottom right,
+    rgba(76, 29, 149, 0.4),
+    rgba(88, 28, 135, 0.3),
+    rgba(67, 56, 202, 0.4)
+  );
+}
+
+.project-gradient-2 {
+  background: linear-gradient(to bottom right,
+    rgba(124, 45, 18, 0.4),
+    rgba(120, 53, 15, 0.3),
+    rgba(113, 63, 18, 0.4)
+  );
+}
+
+[data-theme="light"] .project-gradient-0 {
+  background: linear-gradient(to bottom right,
+    rgba(209, 250, 229, 0.6),
+    rgba(204, 251, 241, 0.5),
+    rgba(207, 250, 254, 0.6)
+  );
+}
+
+[data-theme="light"] .project-gradient-1 {
+  background: linear-gradient(to bottom right,
+    rgba(237, 233, 254, 0.6),
+    rgba(243, 232, 255, 0.5),
+    rgba(224, 231, 255, 0.6)
+  );
+}
+
+[data-theme="light"] .project-gradient-2 {
+  background: linear-gradient(to bottom right,
+    rgba(255, 237, 213, 0.6),
+    rgba(254, 243, 199, 0.5),
+    rgba(254, 249, 195, 0.6)
+  );
+}
