@@ -141,7 +141,7 @@ export const PROJECTS: Project[] = [
 			'Ecommerce connects buyers and local sellers through a hybrid platform for product discovery, real-time communication, and optimized shopping logistics',
 		longDescription:
 			'Cartinary.com is a hybrid logistics and shopping  platform that helps buyers discover local sellers, plan optimized shopping routes, communicate in-app, and adjust plans in real time to save time and effort when buying items. It also allows sellers to list products, set prices, and connect with nearby buyers seamlessly.',
-		image: '/Asset 6@4x (1) 2 (1).png',
+		image: '/cartinary.png',
 		technologies: ['Next.js', 'TypeScript', 'Node.js', 'MUI', 'Redux'],
 		liveUrl: 'https://cartinary.com/',
 		featured: true,
@@ -152,13 +152,13 @@ export const PROJECTS: Project[] = [
 		description: 'crypto exchange platform',
 		longDescription:
 			'WBExchange is a crypto exchange platform that buys popular cryptocurrencies like BTC, USDT, and ETH at competitive rates, offers loyalty rewards on trades, and provides a user dashboard to track rewards and activity.',
-		image: '/logo.png',
+		image: '/wb.png',
 		technologies: [
 			'Next.js',
 			'TypeScript',
 			'Node.js',
 			'MUI',
-			'transtack-query',
+			'Transtack-query',
 		],
 		liveUrl: 'https://wBexchange.com',
 		featured: true,
