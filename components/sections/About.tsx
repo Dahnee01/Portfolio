@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
-import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
+import { staggerContainer, staggerItem } from "@/lib/animations";
 import { BENTO } from "@/lib/data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlowingBorder } from "@/components/ui/GlowingBorder";
