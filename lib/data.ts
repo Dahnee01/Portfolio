@@ -74,9 +74,8 @@ export const BENTO: BentoData = {
 		coordinates: { lat: 6.5244, lng: 3.3792 },
 	},
 	metrics: [
-		{ label: 'Lighthouse Score', value: 98, suffix: '%' },
 		{ label: 'Years Experience', value: 2, suffix: '+' },
-		{ label: 'Projects Delivered', value: 5, suffix: '+' },
+		{ label: 'Projects Delivered', value: 3, suffix: '+' },
 	],
 	currentlyBuilding: {
 		project: 'WB exchange',
