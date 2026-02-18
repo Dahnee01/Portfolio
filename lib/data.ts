@@ -32,7 +32,7 @@ export const HERO: HeroData = {
 		'Daniel Eghosa Erhunmwonsere — Front-End Engineer crafting performant, beautiful digital experiences.',
 	ctaPrimary: { label: 'View Projects', href: '#projects' },
 	ctaSecondary: { label: 'Get in Touch', href: '#contact' },
-	resumeUrl: '/resume.pdf',
+	resumeUrl: '/DANIEL ERHUNMWONSERE resume.pdf',
 };
 
 // ---------- About / Bento ----------
@@ -153,7 +153,13 @@ export const PROJECTS: Project[] = [
 		longDescription:
 			'WBExchange is a crypto exchange platform that buys popular cryptocurrencies like BTC, USDT, and ETH at competitive rates, offers loyalty rewards on trades, and provides a user dashboard to track rewards and activity.',
 		image: '/logo.png',
-		technologies: ['Next.js', 'TypeScript', 'Node.js', 'MUI', 'Redux'],
+		technologies: [
+			'Next.js',
+			'TypeScript',
+			'Node.js',
+			'MUI',
+			'transtack-query',
+		],
 		liveUrl: 'https://wBexchange.com',
 		featured: true,
 	},
