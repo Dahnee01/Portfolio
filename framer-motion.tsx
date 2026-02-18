@@ -84,6 +84,9 @@ function createMotionValue() {
 export const useMotionValue = vi.fn(() => createMotionValue());
 export const useSpring = vi.fn(() => createMotionValue());
 export const useScroll = vi.fn(() => ({
+	scrollX: createMotionValue(),
+	scrollY: createMotionValue(),
+	scrollXProgress: createMotionValue(),
 	scrollYProgress: createMotionValue(),
 }));
 export const useTransform = vi.fn(() => createMotionValue());
