@@ -22,11 +22,26 @@ export function Contact() {
 		'idle' | 'loading' | 'success' | 'error'
 	>('idle');
 
+	const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		setStatus('loading');
-
 		const form = e.currentTarget;
+
+		// Basic client-side validation: prevent sending empty fields
+		const formData = new FormData(form);
+		const name = (formData.get('name') as string) || '';
+		const email = (formData.get('email') as string) || '';
+		const message = (formData.get('message') as string) || '';
+
+		if (!name.trim() || !email.trim() || !message.trim()) {
+			setErrorMessage('Please fill out all fields before sending.');
+			setStatus('idle');
+			return;
+		}
+
+		setErrorMessage(null);
+		setStatus('loading');
 		console.log(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
 		console.log(process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
 		console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
@@ -39,6 +54,7 @@ export function Contact() {
 			);
 			setStatus('success');
 			form.reset();
+			setErrorMessage(null);
 		} catch {
 			setStatus('error');
 		}
@@ -72,13 +88,29 @@ export function Contact() {
 						className='space-y-5'
 						onSubmit={handleSubmit}>
 						<motion.div variants={staggerItem}>
-							<Input label='Name' name='name' glow />
+							<Input
+								label='Name'
+								name='name'
+								glow
+								onChange={() => setErrorMessage(null)}
+							/>
 						</motion.div>
 						<motion.div variants={staggerItem}>
-							<Input label='Email' name='email' type='email' glow />
+							<Input
+								label='Email'
+								name='email'
+								type='email'
+								glow
+								onChange={() => setErrorMessage(null)}
+							/>
 						</motion.div>
 						<motion.div variants={staggerItem}>
-							<Textarea label='Message' name='message' glow />
+							<Textarea
+								label='Message'
+								name='message'
+								glow
+								onChange={() => setErrorMessage(null)}
+							/>
 						</motion.div>
 
 						<motion.div variants={staggerItem}>
@@ -92,6 +124,9 @@ export function Contact() {
 									{status === 'loading' ? 'Sending...' : 'Send Message'}
 								</Button>
 							</MagneticButton>
+							{errorMessage && (
+								<p className='text-red-500 mt-2 text-sm'>{errorMessage}</p>
+							)}
 							{status === 'success' && (
 								<p className='text-green-500 mt-2 text-sm'>Message sent!</p>
 							)}
